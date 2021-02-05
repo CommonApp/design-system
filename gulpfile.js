@@ -78,9 +78,9 @@ gulp.task('styles', () =>
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass.sync({
-      precision: 10
+      outputStyle: 'expanded',
+      precision: 2
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({ browsers: ['last 2 versions'], remove: false }))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist/styles'))
     .pipe(browserSync.stream({ match: '**/*.css' }))

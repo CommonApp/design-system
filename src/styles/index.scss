@@ -1,47 +1,246 @@
-//
-// Prototype styles (using the Sass CSS preprocessor)
-//
-
-//
-// First, we're importing the design system from the npm package
-//
-$static-font-path: '/assets/fonts/webfonts';
-
 @import 'node_modules/@salesforce-ux/design-system/scss/index';
 
-//
-// Then, we're importing some styles via Sass partials (filenames starting with a "_")
-//
-@import 'footer';
+// CA Variables
+// Primary brand colors
+$color-primary--conifer: #b6d961 !default;
+$color-primary--downy:   #5acccc !default;
+$color-primary--sky:     #40c5eb !default;
+$color-primary--denim:   #0b6dbd !default;
+$color-primary--regal:   #004976 !default;
 
-//
-// We can also add styles directly in this file, like so:
-//
+// Secondary brand colors
+$color-secondary--amethyst: #916cc6 !default;
 
-.landing {
+// Neutral palette
+$color-neutral--woodsmoke: #222 !default;
+$color-neutral--emperor:   #555 !default;
+$color-neutral--boulder:   #757575 !default;
+$color-neutral--gray:      #939393 !default;
+$color-neutral--nobel:     #b7b7b7 !default;
+$color-neutral--alto:      #d3d3d3 !default;
+$color-neutral--mercury:   #e0e0e0 !default;
+$color-neutral--gallery:   #ededed !default;
+$color-neutral--concrete:  #f6f6f6 !default;
+
+// Form control brand color
+$color-forms--goblin: #40a656 !default;
+
+// System status colors
+$color-status--error:   #e00029 !default;
+$color-status--success: #107e3f !default;
+
+// ---------------------------------------------------------------------------
+// Borders
+// ---------------------------------------------------------------------------
+$border-radius: 4px !default; // ? `px` to prevent rounding scaling
+
+
+// ---------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------
+// Font stacks
+$type-family--system: 'Roboto', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif !default;
+$type-family--neutrif: 'Neutrif Studio', #{$type-family--system} !default;
+
+// Font sizes
+$type-size--default: 1rem !default; // 16px
+$type-size--1:       2rem !default; // 32px
+$type-size--2:       1.375rem !default; // 22px
+$type-size--3:       1.125rem !default; // 18px
+$type-size--4:       1rem !default; // 16px
+$type-size--5:       .875rem !default; // 14px
+$type-size--6:       .75rem !default; // 12px
+$type-size--7:       .625rem !default; // 10px
+
+// Font weights
+$type-weight--regular:  400 !default;
+$type-weight--semibold: 500 !default;
+$type-weight--bold:     700 !default;
+
+
+/* Common App Lightning Design System customization */
+// ------------------------------------------------------------
+// ------------------------------------------------------------
+/* Text */
+// ------------------------------------------------------------
+// ------------------------------------------------------------
+
+html {
+  color: $color-neutral--woodsmoke;
+  font-family: $type-family--neutrif;
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 1.5; // WCAG 1.4.12
+
+  // Display only
+  background: #fff;
+}
+
+.slds-text-heading--large {
+  margin-top: .6em;
+  font-size: $type-size--1;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.slds-text-heading--medium {
+  margin-top: 1.0909em;
+  font-size: $type-size--2;
+  font-weight: 500;
+  line-height: 1.0909;
+}
+
+.slds-text-heading--small {
+  margin-top: 1.3333em;
+  font-size: $type-size--3;
+  font-weight: 500;
+  line-height: 1.3333;
+}
+
+.slds-text-body_regular {
+  margin-bottom: 1.5em;
+  font-size: $type-size--4;
+  line-height: 1.5;
+}
+
+// ------------------------------------------------------------
+/* Buttons */
+// ------------------------------------------------------------
+
+.slds-button {
+  display: block;
+  padding: .75em 1.25em .85em;
+  border: 2px solid transparent;
+  border-radius: 32px;
+  background: transparent;
+  outline: 0;
+  font-family: $type-family--neutrif;
+  font-size: $type-size--5;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color .15s,
+    border-color .15s,
+    color .15s,
+    transform .35s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 40px;
+    box-shadow:
+      0 1px 1px rgba(#000, .11),
+      0 2px 2px rgba(#000, .11),
+      0 4px 4px rgba(#000, .11),
+      0 6px 8px rgba(#000, .11),
+      0 8px 16px rgba(#000, .11);
+    opacity: 0;
+    transition: opacity .35s;
+    transform: translate3d(0, 0, 0);
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transform: translate3d(0, -3px, 0);
+
+    &::before {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transform: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition:
+      background-color .15s,
+      border-color .15s,
+      color .15s;
+  }
+
+  &.slds-button_brand {
+    border-color: $color-primary--denim;
+    background-color: $color-primary--denim;
+    color: #fff;
+  }
+
+  &.slds-button_outline-brand {
+    border-color: $color-primary--denim;
+    background-color: #fff;
+    color: $color-primary--denim;
+  }
+
+  &.slds-button_neutral {
+    border-color: $color-neutral--gray;
+    background-color: #fff;
+    color: $color-neutral--boulder;
+  }
+
+  &.slds-button_icon {
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border-width: 1px;
+    border-radius: 50%;
+    color: $color-neutral--woodsmoke;
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+      margin: auto;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-neutral--boulder;
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+/* Menus */
+// ------------------------------------------------------------
+
+.slds-dropdown {
+  min-width: 12rem;
+  max-width: 20rem;
+  padding: 0;
   background-color: #fff;
-}
+  border: 0;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, .2),
+    0 4px 5px 0 rgba(0, 0, 0, .14),
+    0 1px 10px 0 rgba(0, 0, 0, .12);
 
-// Push down the global navigation below the header using a placeholder element
-.app-header-placeholder {
-  // A note on Design Tokens in Sass:
-  //
-  // $height-header is a Sass variable pointing to a Design Token
-  // Design tokens are listed at:
-  // https://www.lightningdesignsystem.com/design-tokens/
-  //
-  // This is how you leverage Design Tokens in Sass:
-  height: $height-header;
-}
+  .slds-dropdown__item a {
+    padding: 1rem .5rem;
+    color: #222;
+    line-height: 1.2;
+  }
 
-// Wrap the prototype in a scrollable container
-.app-wrapper {
-  overflow: auto;
-  position: absolute;
-  -webkit-overflow-scrolling: touch;
-  top: $height-context-bar + $height-header;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  [class*="slds-has-divider"] {
+    margin: 0;
+    padding: 0;
+  }
 }
-

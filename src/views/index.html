@@ -12,34 +12,80 @@
   <link rel="stylesheet" href="/styles/index.css" />
 </head>
 <body>
-  <div class="slds-p-around--large slds-container--center slds-container--small landing">
-    <h1 class="slds-text-heading--large">
-      Welcome to the Design System Starter Kit
+  <div class="slds-p-around--large slds-container--center slds-container--medium">
+    <h1 class="slds-text-heading--large slds-m-bottom--large">
+      Common App Lightning Design System customization
     </h1>
-    <p class="slds-text-body--regular slds-m-vertical--large">A rapid prototyping environment using the <a href="https://www.lightningdesignsystem.com">Lightning Design System</a>, brought to you by <a href="https://twitter.com/SalesforceUX">Salesforce UX</a>.</p>
 
-    <img src="/assets/img-efficiency.svg" alt="" />
+    <hr>
 
-    <h2 class="slds-text-heading--medium slds-m-top--large">Get Started</h2>
-    <p class="slds-text-body--regular slds-m-top--large">Edit files in the <a href="https://github.com/salesforce-ux/design-system-starter-kit/tree/master/src"><code>src</code> directory</a> to start building your prototype.</p>
-    <p class="slds-text-body--regular slds-m-top--large">Lightning Design System component documentation and markup available at: <a href="https://www.lightningdesignsystem.com">https://www.lightningdesignsystem.com</a>.</p>
-    <hr />
+    <h2 class="slds-text-heading--medium slds-text-align_right">Text</h2>
 
-    <h2 class="slds-text-heading--medium slds-m-top--large">Example Prototype with Data</h2>
-    <p class="slds-text-body--regular slds-m-top--large slds-m-bottom--small">We’ve put together a prototype to show you what the starter kit is capable of, have a look!</p>
-    <p class="slds-text-body--regular slds-m-vertical--large">Data shown in this example comes from <a href="https://github.com/salesforce-ux/design-system-starter-kit/blob/master/src/views/data/example.json">views/data/example.json</a>. Check out the <a href="https://github.com/salesforce-ux/design-system-starter-kit/blob/master/src/views/data/README.md">README</a> to learn how we are injecting data with "gulp-nunjucks".</p>
-    <p><a href="/example.html" class="slds-button slds-button--brand">Example Prototype</a></p>
-    <hr />
+    <p class="slds-text-heading--large slds-m-bottom--small">
+      Heading large
+    </p>
 
-    <h2 class="slds-text-heading--medium slds-m-top--large">Feedback and Questions</h2>
-    <p class="slds-text-body--regular slds-m-top--large slds-m-bottom--small">Ask questions about prototyping using the design system, report issues about the starter kit… <a href="https://github.com/salesforce-ux/design-system-starter-kit/">on the GitHub repository</a>.</p>
-    <hr />
+    <p class="slds-text-heading--medium slds-m-bottom--small">
+      Heading medium
+    </p>
 
-    <h2 class="slds-text-heading--medium slds-m-top--large">See Also</h2>
-    <p class="slds-text-body--regular slds-m-top--large slds-m-bottom--small">More comfortable designing in <a href="https://www.sketchapp.com/">Sketch</a>? Try the <a href="https://github.com/salesforce-ux/design-system-ui-kit/">Design System UI Kit</a>.</p>
+    <p class="slds-text-heading--small slds-m-bottom--small">
+      Heading small
+    </p>
+
+    <p class="slds-text-body_regular">
+      Common App and Reach Higher have united to inspire more people to complete their education and own their future, no matter what it holds. Get valuable advice from students who have been in your shoes.
+    </p>
+
+    <hr>
+
+    <h2 class="slds-text-heading--medium slds-text-align_right">Buttons</h2>
+
+    <button class="slds-button slds-button_neutral slds-m-bottom--small">Tertiary button</button>
+
+    <button class="slds-button slds-button_outline-brand slds-m-bottom--small">Secondary button</button>
+
+    <button class="slds-button slds-button_brand slds-m-bottom--small">Primary button</button>
+
+    <hr>
+
+    <h2 class="slds-text-heading--medium slds-text-align_right">Menu</h2>
+
+    <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+      <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="Show More">
+        <svg class="slds-button__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+        </svg>
+        <span class="slds-assistive-text">Show More</span>
+      </button>
+      <div class="slds-dropdown slds-dropdown_left">
+        <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+          <li class="slds-dropdown__item" role="presentation">
+            <a href="#" role="menuitem" tabindex="0">
+              <span class="slds-truncate" title="Menu Item One">Menu Item One</span>
+            </a>
+          </li>
+          <li class="slds-dropdown__item" role="presentation">
+            <a href="#" role="menuitem" tabindex="-1">
+              <span class="slds-truncate" title="Menu Item Two">Menu Item Two</span>
+            </a>
+          </li>
+          <li class="slds-dropdown__item" role="presentation">
+            <a href="#" role="menuitem" tabindex="-1">
+              <span class="slds-truncate" title="Menu Item Three">Menu Item Three</span>
+            </a>
+          </li>
+          <li class="slds-has-divider_top-space" role="separator"></li>
+          <li class="slds-dropdown__item" role="presentation">
+            <a href="#" role="menuitem" tabindex="-1">
+              <span class="slds-truncate" title="Menu Item Four">Menu Item Four</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
   </div>
-
   <script src="/scripts/app.js"></script>
   <script src="/scripts/vendor/svg4everybody.min.js"></script>
   <script>svg4everybody();</script>
