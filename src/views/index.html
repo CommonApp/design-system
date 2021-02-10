@@ -112,8 +112,35 @@
       <div class="slds-form-element__control">
         <input type="text" id="text-input-id-2" placeholder="Placeholder text…" required="" aria-describedby="error-message-unique-id" class="slds-input" aria-invalid="true" />
       </div>
-      <div class="slds-form-element__help" id="error-message-unique-id">Enter a value.</div>
+      <div class="slds-form-element__help" id="error-message-unique-id">Please fill out this required question.</div>
     </div>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="textarea-id-01">Textarea Label</label>
+      <div class="slds-form-element__control">
+        <textarea id="textarea-id-01" placeholder="Placeholder text…" class="slds-textarea"></textarea>
+      </div>
+    </div>
+
+    <fieldset class="slds-form-element">
+      <legend class="slds-form-element__legend slds-form-element__label">Radio Group Label</legend>
+      <div class="slds-form-element__control">
+        <span class="slds-radio">
+          <input type="radio" id="radio-43" value="radio-43" name="default" checked="" />
+          <label class="slds-radio__label" for="radio-43">
+            <span class="slds-radio_faux"></span>
+            <span class="slds-form-element__label">Radio Label One</span>
+          </label>
+        </span>
+        <span class="slds-radio">
+          <input type="radio" id="radio-44" value="radio-44" name="default" />
+          <label class="slds-radio__label" for="radio-44">
+            <span class="slds-radio_faux"></span>
+            <span class="slds-form-element__label">Radio Label Two</span>
+          </label>
+        </span>
+      </div>
+    </fieldset>
 
   </div>
   <script src="/scripts/app.js"></script>
