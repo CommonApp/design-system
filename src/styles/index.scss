@@ -59,6 +59,8 @@ $type-weight--bold:     700 !default;
 
 
 /* Common App Lightning Design System customization */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
 // ------------------------------------------------------------
 // ------------------------------------------------------------
 /* Text */
@@ -109,7 +111,8 @@ html {
 
 .slds-button {
   display: block;
-  padding: .75em 1.25em .85em;
+  // padding: .75em 1.25em .85em; Neutrif padding
+  padding: .85em 1.25em .85em; // Roboto padding
   border: 2px solid transparent;
   border-radius: 32px;
   background: transparent;
