@@ -327,3 +327,75 @@ html {
     color: $color-status--error;
   }
 }
+
+
+// Checkbox/radios
+%checkRadioContainer{
+  position: relative;
+  display: grid;
+  grid-template: 'control label' auto / min-content 1fr;
+  gap: .5rem;
+  width: 100%;
+  padding: .25rem 0;
+  cursor: pointer;
+}
+
+%checkRadioFauxElement {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 !important;
+  border: 1px solid $color-neutral--woodsmoke;
+  transition: border-color .15s;
+}
+
+
+.slds-radio,
+.slds-checkbox {
+  margin-left: .5rem;
+
+  &:not(:last-of-type) {
+    margin-bottom: .5rem;
+  }
+
+  .slds-form-element__label {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: $type-size--default;
+    line-height: 1.2;
+  }
+}
+
+
+.slds-radio {
+  .slds-radio__label {
+    @extend %checkRadioContainer;
+  }
+
+  .slds-radio_faux {
+    @extend %checkRadioFauxElement;
+  }
+
+  [type="radio"]:focus {
+    + .slds-radio__label .slds-radio_faux {
+      border-color: $color-neutral--woodsmoke;
+      box-shadow: none;
+    }
+
+    + .slds-radio__label .slds-form-element__label {
+      text-decoration: underline;
+    }
+  }
+
+  [type="radio"]:checked {
+    + .slds-radio__label .slds-radio_faux::after {
+      width: 10px;
+      height: 10px;
+      background: $color-neutral--woodsmoke;
+    }
+  }
+}
