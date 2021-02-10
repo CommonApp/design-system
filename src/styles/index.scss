@@ -336,6 +336,7 @@ html {
   grid-template: 'control label' auto / min-content 1fr;
   gap: .5rem;
   width: 100%;
+  width: max-content;
   padding: .25rem 0;
   cursor: pointer;
 }
@@ -396,6 +397,39 @@ html {
       width: 10px;
       height: 10px;
       background: $color-neutral--woodsmoke;
+    }
+  }
+}
+
+.slds-checkbox {
+  .slds-checkbox__label {
+    @extend %checkRadioContainer;
+  }
+
+  .slds-checkbox_faux {
+    @extend %checkRadioFauxElement;
+    border-radius: 4px;
+  }
+
+  [type="checkbox"]:focus,
+  [type="checkbox"]:focus:checked {
+    + .slds-checkbox__label .slds-checkbox_faux {
+      border-color: $color-neutral--woodsmoke;
+      box-shadow: none;
+    }
+
+    + .slds-checkbox__label .slds-form-element__label {
+      text-decoration: underline;
+    }
+  }
+
+  [type="checkbox"]:checked {
+    + .slds-checkbox__label .slds-checkbox_faux::after {
+      height: .35rem;
+      width: .75rem;
+      transform: translate3d(-50%, -80%, 0) rotate(-45deg);
+      border-bottom: 3px solid $color-neutral--woodsmoke;
+      border-left: 3px solid $color-neutral--woodsmoke;
     }
   }
 }
