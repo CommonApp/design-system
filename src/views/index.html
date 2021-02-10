@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/styles/index.css" />
 </head>
 <body>
-  <div class="slds-p-around--large slds-container--center slds-container--medium">
+  <div class="slds-p-around--large slds-container--center slds-container--medium slds-m-bottom--xx-large">
     <h1 class="slds-text-heading--large slds-m-bottom--large">
       Common App Lightning Design System customization
     </h1>
@@ -83,6 +83,36 @@
           </li>
         </ul>
       </div>
+    </div>
+
+    <hr>
+
+    <h2 class="slds-text-heading--medium slds-text-align_right">Form elements</h2>
+
+    <div class="slds-form-element">
+      <label class="slds-form-element__label" for="text-input-id-1">
+        Input Label<abbr class="slds-required" title="required"> *</abbr>
+      </label>
+
+      <div class="slds-form-element__control">
+        <input type="text" id="text-input-id-1" placeholder="Placeholder text…" required="" class="slds-input" />
+      </div>
+    </div>
+
+    <div class="slds-form-element slds-has-error">
+      <label class="slds-form-element__label" for="text-input-id-2">
+        <!-- Conditional on error -->
+        <svg class="slds-form-error__icon" aria-hidden="true">
+          <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#clear"></use>
+        </svg>
+
+        Input Label<abbr class="slds-required" title="required"> *</abbr>
+      </label>
+
+      <div class="slds-form-element__control">
+        <input type="text" id="text-input-id-2" placeholder="Placeholder text…" required="" aria-describedby="error-message-unique-id" class="slds-input" aria-invalid="true" />
+      </div>
+      <div class="slds-form-element__help" id="error-message-unique-id">Enter a value.</div>
     </div>
 
   </div>

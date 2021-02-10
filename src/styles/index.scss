@@ -247,3 +247,77 @@ html {
     padding: 0;
   }
 }
+
+// ------------------------------------------------------------
+/* Forms */
+// ------------------------------------------------------------
+
+.slds-form-element {
+  position: relative;
+  display: block;
+  max-width: 35rem;
+  margin-bottom: 2em;
+
+  .slds-form-element__label {
+    color: $color-neutral--woodsmoke;
+    margin-bottom: .25em;
+    font-size: $type-size--5;
+    line-height: inherit;
+
+    .slds-required {
+      color: $color-status--error;
+    }
+  }
+
+  .slds-form-error__icon {
+    position: absolute;
+    top: .2rem;
+    left: -1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: $color-status--error;
+  }
+}
+
+.slds-input {
+  padding: .65em .75em;
+  border: 1px solid $color-neutral--woodsmoke;
+  border-radius: 4px;
+  font-size: $type-size--default;
+  line-height: 1.35;
+  caret-color: $color-neutral--woodsmoke;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    transition: border-color .15s,
+                box-shadow .15s;
+  }
+
+  &:hover,
+  &:focus,
+  &:required:hover,
+  &:required:focus {
+    border-color: $color-neutral--woodsmoke;
+    box-shadow: inset 0 0 0px 1px $color-neutral--woodsmoke;
+  }
+
+  // Error state
+  .slds-has-error & {
+    border-color: $color-status--error;
+    box-shadow: none;
+
+    &:hover,
+    &:focus,
+    &:required:hover,
+    &:required:focus {
+      border-color: $color-status--error;
+      box-shadow: inset 0 0 0px 1px $color-status--error;
+    }
+  }
+}
+
+.slds-form-element__help {
+  margin-top: .25em;
+  color: $color-status--error;
+  font-size: $type-size--6;
+  line-height: 1.2;
+}
