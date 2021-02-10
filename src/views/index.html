@@ -19,7 +19,7 @@
 
     <hr>
 
-    <h2 class="slds-text-heading--medium slds-text-align_right">Text</h2>
+    <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Text</h2>
 
     <p class="slds-text-heading--large slds-m-bottom--small">
       Heading large
@@ -39,7 +39,7 @@
 
     <hr>
 
-    <h2 class="slds-text-heading--medium slds-text-align_right">Buttons</h2>
+    <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Buttons</h2>
 
     <button class="slds-button slds-button_neutral slds-m-bottom--small">Tertiary button</button>
 
@@ -49,7 +49,7 @@
 
     <hr>
 
-    <h2 class="slds-text-heading--medium slds-text-align_right">Menu</h2>
+    <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Menu</h2>
 
     <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
       <button class="slds-button slds-button_icon slds-button_icon-border-filled" aria-haspopup="true" title="Show More">
@@ -87,7 +87,7 @@
 
     <hr>
 
-    <h2 class="slds-text-heading--medium slds-text-align_right">Form elements</h2>
+    <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Form elements</h2>
 
     <div class="slds-form-element">
       <label class="slds-form-element__label" for="text-input-id-1">
@@ -205,6 +205,64 @@
         </div>
       </div>
     </div>
+
+    <hr>
+
+    <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Accordions</h2>
+
+    <ul class="slds-accordion">
+      <li class="slds-accordion__list-item">
+        <section class="slds-accordion__section slds-is-open">
+          <div class="slds-accordion__summary">
+            <h2 class="slds-accordion__summary-heading">
+              <button class="slds-accordion__summary-action" aria-controls="referenceId-45" aria-expanded="true" title="Accordion summary">
+                <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                </svg>
+                <span class="slds-accordion__summary-content">Accordion summary</span>
+              </button>
+            </h2>
+          </div>
+          <div class="slds-accordion__content" id="referenceId-45">
+            <p>Accordion details - A</p>
+          </div>
+        </section>
+      </li>
+      <li class="slds-accordion__list-item">
+        <section class="slds-accordion__section">
+          <div class="slds-accordion__summary">
+            <h2 class="slds-accordion__summary-heading">
+              <button class="slds-accordion__summary-action" aria-controls="referenceId-46" aria-expanded="false" title="Accordion summary">
+                <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                </svg>
+                <span class="slds-accordion__summary-content">Accordion summary</span>
+              </button>
+            </h2>
+          </div>
+          <div hidden="" class="slds-accordion__content" id="referenceId-46">
+            <p>Accordion details - B</p>
+          </div>
+        </section>
+      </li>
+      <li class="slds-accordion__list-item">
+        <section class="slds-accordion__section">
+          <div class="slds-accordion__summary">
+            <h2 class="slds-accordion__summary-heading">
+              <button class="slds-accordion__summary-action" aria-controls="referenceId-47" aria-expanded="false" title="Accordion summary">
+                <svg class="slds-accordion__summary-action-icon slds-button__icon slds-button__icon_left" aria-hidden="true">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#switch"></use>
+                </svg>
+                <span class="slds-accordion__summary-content">Accordion summary</span>
+              </button>
+            </h2>
+          </div>
+          <div hidden="" class="slds-accordion__content" id="referenceId-47">
+            <p>Accordion details - C</p>
+          </div>
+        </section>
+      </li>
+    </ul>
 
   </div>
   <script src="/scripts/app.js"></script>
