@@ -79,7 +79,7 @@ gulp.task('styles', () =>
     .pipe($.sourcemaps.init())
     .pipe($.sass.sync({
       outputStyle: 'expanded',
-      precision: 2
+      precision: 4
     }).on('error', $.sass.logError))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('dist/styles'))
