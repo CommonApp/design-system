@@ -82,6 +82,10 @@ body {
   font-size: 1rem;
 }
 
+a {
+  color: $color-primary--denim;
+}
+
 .slds-text-heading--large {
   margin-top: .6em;
   font-size: $type-size--1;
@@ -579,6 +583,7 @@ body {
     position: absolute;
     top: -5px;
     left: -5px;
+    z-index: -1;
     width: calc(100% + 10px);
     height: calc(100% + 10px);
     border: 2px solid $color-neutral--woodsmoke;
