@@ -268,86 +268,19 @@
 
     <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Multi-select</h2>
 
+    <p class="slds-text-body_small slds-m-bottom_small">Small note that this is just copy/pasted from the existing system. The buttons in between are missing their images, so ignore the text-only view in this sample.</p>
+    <p class="slds-text-body_small slds-m-bottom_medium">One suggested change here is to increase the "size" of each multi-select item from 4 to 6 or 7. It gives them more breathing room and they end up feeling less cramped.</p>
 
-    <div class="slds-form-element slds-form-element_large" role="group" aria-labelledby="picklist-group-label">
-      <span id="picklist-group-label" class="slds-form-element__label slds-form-element__legend">Select Options</span>
-      <div class="slds-form-element__control">
-        <div class="slds-dueling-list">
-          <div class="slds-assistive-text" id="drag-live-region" aria-live="assertive"></div>
-          <div class="slds-assistive-text" id="option-drag-label">Press space bar when on an item, to move it within the list. Cmd/Ctrl plus left and right arrow keys, to move items between lists.</div>
-          <div class="slds-dueling-list__column">
-            <span class="slds-form-element__label" id="label-9">First Category</span>
-            <div class="slds-dueling-list__options">
-              <ul aria-describedby="option-drag-label" aria-labelledby="label-9" aria-multiselectable="true" class="slds-listbox slds-listbox_vertical" role="listbox">
-                <li role="presentation" class="slds-listbox__item">
-                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="0">
-                    <span class="slds-media__body">
-                      <span class="slds-truncate" title="Option 1">Option 1</span>
-                    </span>
-                  </div>
-                </li>
-                <li role="presentation" class="slds-listbox__item">
-                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
-                    <span class="slds-media__body">
-                      <span class="slds-truncate" title="Option 2">Option 2</span>
-                    </span>
-                  </div>
-                </li>
-                <li role="presentation" class="slds-listbox__item">
-                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
-                    <span class="slds-media__body">
-                      <span class="slds-truncate" title="Option 3">Option 3</span>
-                    </span>
-                  </div>
-                </li>
-                <li role="presentation" class="slds-listbox__item">
-                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
-                    <span class="slds-media__body">
-                      <span class="slds-truncate" title="Option 6">Option 6</span>
-                    </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="slds-dueling-list__column">
-            <button class="slds-button slds-button_icon slds-button_icon-container" title="Move Selection to Second Category">
-              <svg class="slds-button__icon" aria-hidden="true">
-                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#right"></use>
-              </svg>
-              <span class="slds-assistive-text">Move Selection to Second Category</span>
-            </button>
-            <button class="slds-button slds-button_icon slds-button_icon-container" title="Move Selection to First Category">
-              <svg class="slds-button__icon" aria-hidden="true">
-                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#left"></use>
-              </svg>
-              <span class="slds-assistive-text">Move Selection to First Category</span>
-            </button>
-          </div>
-          <div class="slds-dueling-list__column">
-            <span class="slds-form-element__label" id="label-10">Second Category</span>
-            <div class="slds-dueling-list__options">
-              <ul aria-describedby="option-drag-label" aria-labelledby="label-10" aria-multiselectable="true" class="slds-listbox slds-listbox_vertical" role="listbox">
-                <li role="presentation" class="slds-listbox__item">
-                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="0">
-                    <span class="slds-media__body">
-                      <span class="slds-truncate" title="Option 4">Option 4</span>
-                    </span>
-                  </div>
-                </li>
-                <li role="presentation" class="slds-listbox__item">
-                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
-                    <span class="slds-media__body">
-                      <span class="slds-truncate" title="Option 5">Option 5</span>
-                    </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <table class="multiSelectPicklistTable" cellspacing="0" cellpadding="0" border="0"><tbody><tr>
+      <td></td><td colspan="100%" height="5"></td></tr>
+      <tr class="multiSelectPicklistRow"><td>
+      <select multiple="multiple" ondblclick="MultiSelectPicklist.handleMSPSelect('j_id0:CommonApplication:j_id24:j_id58:j_id59:j_id62:j_id63:j_id118'); " id="j_id0:CommonApplication:j_id24:j_id58:j_id59:j_id62:j_id63:j_id118_unselected" title="Academic Program Tags - Available" style="width: 295px;" size="6"><optgroup style="text-decoration:none;" label="Available"></optgroup>
+      <option value="0" style="width: 125px;">Art &amp; Design</option><option value="2" style="width: 125px;">Communication</option><option value="3" style="width: 125px;">Culinary</option><option value="5" style="width: 125px;">Economics</option></select></td><td class="multiSelectPicklistCell" style="justify-self: center;align-self: center;">
+      <a href="javascript:MultiSelectPicklist.handleMSPSelect%28%27j_id0%3ACommonApplication%3Aj_id24%3Aj_id58%3Aj_id59%3Aj_id62%3Aj_id63%3Aj_id118%27%29%3B" style="display: flex;width: 2rem;height: 2rem;"><img src="/membersupport/img/arrow2_picklist_right.gif" alt="Add" id="j_id0:CommonApplication:j_id24:j_id58:j_id59:j_id62:j_id63:j_id118_right_arrow" style="/*! cursor:pointer; */width: 1rem;height: 1rem;margin: auto;" title="Add" width="17" height="17" border="0" align="texttop"></a>
+      <br style="width: 125px;"><br style="width: 125px;"><a href="javascript:MultiSelectPicklist.handleMSPUnSelect%28%27j_id0%3ACommonApplication%3Aj_id24%3Aj_id58%3Aj_id59%3Aj_id62%3Aj_id63%3Aj_id118%27%29%3B" style="display: flex;width: 2rem;height: 2rem;"><img src="/membersupport/img/arrow2_picklist_left.gif" alt="Remove" id="j_id0:CommonApplication:j_id24:j_id58:j_id59:j_id62:j_id63:j_id118_left_arrow" style="cursor:pointer;width: 1rem;height: 1rem;margin: auto;" title="Remove" width="17" height="17" border="0" align="texttop"></a></td><td>
+      <select multiple="multiple" ondblclick="MultiSelectPicklist.handleMSPUnSelect('j_id0:CommonApplication:j_id24:j_id58:j_id59:j_id62:j_id63:j_id118'); " id="j_id0:CommonApplication:j_id24:j_id58:j_id59:j_id62:j_id63:j_id118_selected" title="Academic Program Tags - Chosen" size="6" style="width: 295px;"><optgroup style="text-decoration:none;" label="Chosen"></optgroup>
+
+      <option value="1" style="width: 125px;">Business</option><option value="4" style="width: 125px;">Design</option><option value="6" style="width: 125px;">Education</option><option value="7" style="width: 125px;">Engineering</option><option value="8" style="width: 125px;">Finance/Accounting</option><option value="9" style="width: 125px;">Government/Political Science</option><option value="10" style="width: 125px;">Health Science</option><option value="11" style="width: 125px;">Liberal Arts</option><option value="12" style="width: 125px;">Music</option><option value="13" style="width: 125px;">Nursing</option><option value="14" style="width: 125px;">Performing Arts</option><option value="15" style="width: 125px;">Research</option><option value="16" style="width: 125px;">Science</option><option value="17" style="width: 125px;">Social Science</option><option value="18" style="width: 125px;">Technology</option><option value="19" style="width: 125px;">Visual Arts</option></select></td></tr></tbody></table>
 
     <hr>
 
