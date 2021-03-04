@@ -264,6 +264,115 @@
       </li>
     </ul>
 
+    <hr>
+
+    <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Multi-select</h2>
+
+
+    <div class="slds-form-element" role="group" aria-labelledby="picklist-group-label">
+      <span id="picklist-group-label" class="slds-form-element__label slds-form-element__legend">Select Options</span>
+      <div class="slds-form-element__control">
+        <div class="slds-dueling-list">
+          <div class="slds-assistive-text" id="drag-live-region" aria-live="assertive"></div>
+          <div class="slds-assistive-text" id="option-drag-label">Press space bar when on an item, to move it within the list. Cmd/Ctrl plus left and right arrow keys, to move items between lists.</div>
+          <div class="slds-dueling-list__column">
+            <span class="slds-form-element__label" id="label-9">First Category</span>
+            <div class="slds-dueling-list__options">
+              <ul aria-describedby="option-drag-label" aria-labelledby="label-9" aria-multiselectable="true" class="slds-listbox slds-listbox_vertical" role="listbox">
+                <li role="presentation" class="slds-listbox__item">
+                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="0">
+                    <span class="slds-media__body">
+                      <span class="slds-truncate" title="Option 1">Option 1</span>
+                    </span>
+                  </div>
+                </li>
+                <li role="presentation" class="slds-listbox__item">
+                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
+                    <span class="slds-media__body">
+                      <span class="slds-truncate" title="Option 2">Option 2</span>
+                    </span>
+                  </div>
+                </li>
+                <li role="presentation" class="slds-listbox__item">
+                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
+                    <span class="slds-media__body">
+                      <span class="slds-truncate" title="Option 3">Option 3</span>
+                    </span>
+                  </div>
+                </li>
+                <li role="presentation" class="slds-listbox__item">
+                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
+                    <span class="slds-media__body">
+                      <span class="slds-truncate" title="Option 6">Option 6</span>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="slds-dueling-list__column">
+            <button class="slds-button slds-button_icon slds-button_icon-container" title="Move Selection to Second Category">
+              <svg class="slds-button__icon" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#right"></use>
+              </svg>
+              <span class="slds-assistive-text">Move Selection to Second Category</span>
+            </button>
+            <button class="slds-button slds-button_icon slds-button_icon-container" title="Move Selection to First Category">
+              <svg class="slds-button__icon" aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#left"></use>
+              </svg>
+              <span class="slds-assistive-text">Move Selection to First Category</span>
+            </button>
+          </div>
+          <div class="slds-dueling-list__column">
+            <span class="slds-form-element__label" id="label-10">Second Category</span>
+            <div class="slds-dueling-list__options">
+              <ul aria-describedby="option-drag-label" aria-labelledby="label-10" aria-multiselectable="true" class="slds-listbox slds-listbox_vertical" role="listbox">
+                <li role="presentation" class="slds-listbox__item">
+                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="0">
+                    <span class="slds-media__body">
+                      <span class="slds-truncate" title="Option 4">Option 4</span>
+                    </span>
+                  </div>
+                </li>
+                <li role="presentation" class="slds-listbox__item">
+                  <div class="slds-listbox__option slds-listbox__option_plain slds-media slds-media_small slds-media_inline" aria-selected="false" draggable="true" role="option" tabindex="-1">
+                    <span class="slds-media__body">
+                      <span class="slds-truncate" title="Option 5">Option 5</span>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 class="slds-text-heading--medium slds-text-align_right slds-m-bottom--small">Tiles (Status block)</h2>
+
+    <div class="slds-tile">
+      <dl class="slds-list_horizontal slds-wrap">
+        <dt class="slds-item_label">First Label:</dt>
+        <dd class="slds-item_detail">Description for first label</dd>
+        <dt class="slds-item_label">Second Label:</dt>
+        <dd class="slds-item_detail">Description for second label</dd>
+      </dl>
+    </div>
+
+    <div class="slds-tile">
+      <a class="slds-link" href="">Download the member agreement</a>
+
+      <dl class="slds-list_horizontal slds-wrap">
+        <dt class="slds-item_label">First Label:</dt>
+        <dd class="slds-item_detail">Description for first label</dd>
+        <dt class="slds-item_label">Second Label:</dt>
+        <dd class="slds-item_detail">Description for second label</dd>
+      </dl>
+    </div>
+
   </div>
   <script src="/scripts/app.js"></script>
   <script src="/scripts/vendor/svg4everybody.min.js"></script>

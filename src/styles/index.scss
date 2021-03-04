@@ -259,7 +259,7 @@ body {
 .slds-form-element {
   position: relative;
   display: block;
-  max-width: 25rem;
+  max-width: 30rem;
   margin-bottom: 2em;
 
   .slds-form-element__label {
@@ -554,5 +554,60 @@ body {
 
   > .slds-accordion__content {
     border-bottom: 1px solid $color-primary--sky;
+  }
+}
+
+
+// ------------------------------------------------------------
+/* Accordions */
+// ------------------------------------------------------------
+
+.slds-tile {
+  position: relative;
+  margin-bottom: 1.25em;
+  padding: .5em 1em .5em .5em;
+  color: $color-neutral--woodsmoke;
+  font-size: $type-size--5;
+  border: 1px solid $color-neutral--woodsmoke;
+  border-radius: 4px;
+  background: $color-neutral--gallery;
+  box-shadow: none;
+
+  // Double border focus state
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 2px solid $color-neutral--woodsmoke;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  // Assume content within tiles is description lists
+  .slds-list_horizontal {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(10px, 1fr);
+    grid-gap: .25rem;
+
+    &:not(:first-child) {
+      margin-top: .25rem;
+    }
+
+    .slds-item_label {
+      width: 100%;
+      font-weight: $type-weight--semibold;
+    }
   }
 }
