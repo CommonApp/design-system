@@ -520,7 +520,7 @@ a {
     position: absolute;
     top: -2px;
     left: -8px;
-    z-index: 2;
+    z-index: 1;
     width: calc(100% + 16px);
     height: calc(100% + 4px);
     border: 2px solid $color-primary--denim;
@@ -603,21 +603,25 @@ a {
       opacity: 1;
     }
   }
+}
 
-  // Assume content within tiles is description lists
-  .slds-list_horizontal {
-    display: grid;
-    grid-template-columns: 7.5rem minmax(10px, 1fr);
-    grid-gap: .25rem;
+// Assume content within tiles is description lists
+.slds-list_horizontal {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(10px, 1fr);
+  grid-gap: .25rem;
 
-    &:not(:first-child) {
-      margin-top: .25rem;
-    }
+  &:not(:first-child) {
+    margin-top: .25rem;
+  }
 
-    .slds-item_label {
-      width: 100%;
-      font-weight: $type-weight--semibold;
-    }
+  .slds-item_label {
+    width: 100%;
+    font-weight: $type-weight--semibold;
+  }
+
+  .slds-item_detail {
+    width: 100%;
   }
 }
 
@@ -670,5 +674,65 @@ a {
         margin-top: .5rem;
       }
     }
+  }
+}
+
+
+// ------------------------------------------------------------
+/* Cards */
+// ------------------------------------------------------------
+
+.slds-card {
+  padding: .8rem 1rem .9rem;
+  border: 2px solid #004976;
+  border-radius: 4px;
+  background-color: #fff;
+
+  .slds-media__figure {
+    flex: 0 0 7.5rem;
+    overflow: hidden;
+    margin-right: 1rem;
+    border-radius: 50%;
+  }
+
+  .slds-card__header-title {
+    font-size: $type-size--3;
+    font-weight: 700;
+  }
+
+  .slds-list_horizontal {
+    grid-gap: 0 .25rem;
+  }
+
+  .slds-card__footer {
+    margin-top: 0;
+    padding: 0;
+    border-top: 0;
+    font-size: $type-size--4;
+  }
+
+  // Using expandable sections as the more info area
+  .slds-section__title-action {
+    padding-left: 9.5rem;
+    background-color: transparent;
+    border: 0;
+    color: $color-primary--denim;
+    font-size: $type-size--5;
+    font-weight: $type-weight--semibold;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    .slds-section__title-action-icon {
+      margin-left: .5rem;
+    }
+  }
+
+  .slds-section__content {
+    padding-left: 9.5rem; // Align with non-expanded content
+    text-align: left;
   }
 }
