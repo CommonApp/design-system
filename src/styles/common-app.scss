@@ -1,0 +1,822 @@
+/* Common App Lightning Design System customization */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+
+// CA Variables
+// Primary brand colors
+$color-primary--conifer: #b6d961 !default;
+$color-primary--downy:   #5acccc !default;
+$color-primary--sky:     #40c5eb !default;
+$color-primary--denim:   #0b6dbd !default;
+$color-primary--regal:   #004976 !default;
+
+// Secondary brand colors
+$color-secondary--amethyst: #916cc6 !default;
+
+// Neutral palette
+$color-neutral--woodsmoke: #222 !default;
+$color-neutral--emperor:   #555 !default;
+$color-neutral--boulder:   #757575 !default;
+$color-neutral--gray:      #939393 !default;
+$color-neutral--nobel:     #b7b7b7 !default;
+$color-neutral--alto:      #d3d3d3 !default;
+$color-neutral--mercury:   #e0e0e0 !default;
+$color-neutral--gallery:   #ededed !default;
+$color-neutral--concrete:  #f6f6f6 !default;
+
+// Form control brand color
+$color-forms--goblin: #40a656 !default;
+
+// System status colors
+$color-status--error:   #e00029 !default;
+$color-status--success: #107e3f !default;
+
+// ---------------------------------------------------------------------------
+// Borders
+// ---------------------------------------------------------------------------
+$border-radius: 4px !default; // ? `px` to prevent rounding scaling
+
+
+// ---------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------
+// Font stacks
+$type-family--system: 'Roboto', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif !default;
+$type-family--neutrif: 'Neutrif Studio', #{$type-family--system} !default;
+
+// Font sizes
+$type-size--default: 1rem !default; // 16px
+$type-size--1:       2rem !default; // 32px
+$type-size--2:       1.375rem !default; // 22px
+$type-size--3:       1.125rem !default; // 18px
+$type-size--4:       1rem !default; // 16px
+$type-size--5:       .875rem !default; // 14px
+$type-size--6:       .75rem !default; // 12px
+$type-size--7:       .625rem !default; // 10px
+
+// Font weights
+$type-weight--regular:  400 !default;
+$type-weight--semibold: 500 !default;
+$type-weight--bold:     700 !default;
+
+// ------------------------------------------------------------
+/* Text */
+// ------------------------------------------------------------
+
+html {
+  color: $color-neutral--woodsmoke;
+  font-family: $type-family--neutrif;
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 1.5; // WCAG 1.4.12
+
+  // Display only
+  background: #fff;
+}
+
+body {
+  font-size: 1rem;
+}
+
+a {
+  color: $color-primary--denim;
+}
+
+.slds-text-heading--large {
+  margin-top: .6em;
+  font-size: $type-size--1;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.slds-text-heading--medium {
+  margin-top: 1.0909em;
+  font-size: $type-size--2;
+  font-weight: 500;
+  line-height: 1.0909;
+}
+
+.slds-text-heading--small {
+  margin-top: 1.3333em;
+  font-size: $type-size--3;
+  font-weight: 500;
+  line-height: 1.3333;
+}
+
+.slds-text-body_regular {
+  margin-bottom: 1.5em;
+  font-size: $type-size--4;
+  line-height: 1.5;
+}
+
+// ------------------------------------------------------------
+/* Buttons */
+// ------------------------------------------------------------
+
+.slds-button {
+  display: block;
+  // padding: .75em 1.25em .85em; Neutrif padding
+  padding: .85em 1.25em .85em; // Roboto padding
+  border: 2px solid transparent;
+  border-radius: 32px;
+  background: transparent;
+  outline: 0;
+  font-family: $type-family--neutrif;
+  font-size: $type-size--5;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color .15s,
+    border-color .15s,
+    color .15s,
+    transform .35s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 40px;
+    box-shadow:
+      0 1px 1px rgba(#000, .11),
+      0 2px 2px rgba(#000, .11),
+      0 4px 4px rgba(#000, .11),
+      0 6px 8px rgba(#000, .11),
+      0 8px 16px rgba(#000, .11);
+    opacity: 0;
+    transition: opacity .35s;
+    transform: translate3d(0, 0, 0);
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transform: translate3d(0, -3px, 0);
+
+    &::before {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transform: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition:
+      background-color .15s,
+      border-color .15s,
+      color .15s;
+  }
+
+  &.slds-button_brand {
+    border-color: $color-primary--denim;
+    background-color: $color-primary--denim;
+    color: #fff;
+  }
+
+  &.slds-button_outline-brand {
+    border-color: $color-primary--denim;
+    background-color: #fff;
+    color: $color-primary--denim;
+  }
+
+  &.slds-button_neutral {
+    border-color: $color-neutral--gray;
+    background-color: #fff;
+    color: $color-neutral--boulder;
+  }
+
+  &.slds-button_icon {
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border-width: 1px;
+    border-radius: 50%;
+    color: $color-neutral--woodsmoke;
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+      margin: auto;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-neutral--boulder;
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+/* Menus */
+// ------------------------------------------------------------
+
+.slds-dropdown {
+  min-width: 12rem;
+  max-width: 20rem;
+  padding: 0;
+  background-color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow:
+    0 2px 4px -1px rgba(0, 0, 0, .2),
+    0 4px 5px 0 rgba(0, 0, 0, .14),
+    0 1px 10px 0 rgba(0, 0, 0, .12);
+
+  .slds-dropdown__item a {
+    padding: 1rem .5rem;
+    color: #222;
+    line-height: 1.2;
+  }
+
+  [class*="slds-has-divider"] {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// ------------------------------------------------------------
+/* Forms */
+// ------------------------------------------------------------
+
+.slds-form-element {
+  position: relative;
+  display: block;
+  max-width: 30rem;
+  margin-bottom: 2em;
+
+  .slds-form-element__label {
+    color: $color-neutral--woodsmoke;
+    margin-bottom: .25em;
+    font-size: $type-size--5;
+    font-weight: $type-weight--regular;
+    line-height: inherit;
+
+    .slds-required {
+      color: $color-status--error;
+    }
+  }
+
+  .slds-form-error__icon {
+    position: absolute;
+    top: .2rem;
+    left: -1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: $color-status--error;
+  }
+
+  &.slds-form-element_large {
+    max-width: 35rem;
+  }
+}
+
+.slds-input,
+.slds-textarea,
+.slds-combobox__input,
+[role="combobox"] input[readonly] {
+  padding: .65em .75em;
+  border: 1px solid $color-neutral--woodsmoke;
+  border-radius: 4px;
+  font-size: $type-size--default;
+  line-height: 1.35;
+  caret-color: $color-neutral--woodsmoke;
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    transition: border-color .15s,
+                box-shadow .15s;
+  }
+
+  &:hover,
+  &:focus,
+  &:required:hover,
+  &:required:focus {
+    border-color: $color-neutral--woodsmoke;
+    box-shadow: inset 0 0 0px 1px $color-neutral--woodsmoke;
+  }
+
+  // Error state
+  .slds-has-error & {
+    border-color: $color-status--error;
+    box-shadow: none;
+
+    &:hover,
+    &:focus,
+    &:required:hover,
+    &:required:focus {
+      border-color: $color-status--error;
+      box-shadow: inset 0 0 0px 1px $color-status--error;
+    }
+  }
+}
+
+::placeholder {
+  color: $color-neutral--gray;
+  font-size: $type-size--default;
+  font-family: $type-family--neutrif;
+  font-style: italic;
+}
+
+.slds-form-element__help {
+  margin-top: .25em;
+  color: $color-neutral--emperor;
+  font-size: $type-size--6;
+  line-height: 1.2;
+
+  .slds-has-error & {
+    color: $color-status--error;
+  }
+}
+
+
+// Checkbox/radios
+%checkRadioContainer{
+  position: relative;
+  display: grid;
+  grid-template: 'control label' auto / min-content 1fr;
+  gap: .5rem;
+  width: 100%;
+  width: max-content;
+  padding: .25rem 0;
+  cursor: pointer;
+}
+
+%checkRadioFauxElement {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 !important;
+  border: 1px solid $color-neutral--woodsmoke;
+  transition: border-color .15s;
+}
+
+
+.slds-radio,
+.slds-checkbox {
+  margin-left: .5rem;
+
+  &:not(:last-of-type) {
+    margin-bottom: .5rem;
+  }
+
+  .slds-form-element__label {
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: $type-size--default;
+    line-height: 1.2;
+  }
+}
+
+
+.slds-radio {
+  .slds-radio__label {
+    @extend %checkRadioContainer;
+  }
+
+  .slds-radio_faux {
+    @extend %checkRadioFauxElement;
+  }
+
+  [type="radio"]:focus {
+    + .slds-radio__label .slds-radio_faux {
+      border-color: $color-neutral--woodsmoke;
+      box-shadow: none;
+    }
+
+    + .slds-radio__label .slds-form-element__label {
+      text-decoration: underline;
+    }
+  }
+
+  [type="radio"]:checked {
+    + .slds-radio__label .slds-radio_faux::after {
+      width: 10px;
+      height: 10px;
+      background: $color-neutral--woodsmoke;
+    }
+  }
+}
+
+.slds-checkbox {
+  .slds-checkbox__label {
+    @extend %checkRadioContainer;
+  }
+
+  .slds-checkbox_faux {
+    @extend %checkRadioFauxElement;
+    border-radius: 4px;
+  }
+
+  [type="checkbox"]:focus,
+  [type="checkbox"]:focus:checked {
+    + .slds-checkbox__label .slds-checkbox_faux {
+      border-color: $color-neutral--woodsmoke;
+      box-shadow: none;
+    }
+
+    + .slds-checkbox__label .slds-form-element__label {
+      text-decoration: underline;
+    }
+  }
+
+  [type="checkbox"]:checked {
+    + .slds-checkbox__label .slds-checkbox_faux::after {
+      height: .35rem;
+      width: .75rem;
+      transform: translate3d(-50%, -80%, 0) rotate(-45deg);
+      border-bottom: 3px solid $color-neutral--woodsmoke;
+      border-left: 3px solid $color-neutral--woodsmoke;
+    }
+  }
+}
+
+
+// Dropdown (picklist)
+.slds-combobox {
+  .slds-dropdown {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .35);
+    outline: transparent solid 1px;
+
+    .slds-listbox__option {
+      position: relative;
+      display: block;
+      padding: .5rem .75rem;
+      font-size: $type-size--default;
+      cursor: pointer;
+    }
+  }
+}
+
+
+
+// ------------------------------------------------------------
+/* Accordions */
+// ------------------------------------------------------------
+
+.slds-accordion__section {
+  padding: 0;
+}
+
+.slds-accordion__list-item {
+  border: 0;
+
+  &:first-of-type {
+    border-top: 1px solid $color-primary--sky;
+  }
+}
+
+.slds-accordion__summary-action {
+  position: relative;
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  width: 100%;
+  padding: 1.15rem .25rem;
+  background: #fff;
+  border-width: 0;
+  border-bottom: 1px solid $color-primary--sky;
+  text-align: left;
+
+  .slds-accordion__summary-content {
+    flex: 1 1 100%;
+  }
+
+  .slds-accordion__summary-action-icon {
+    transform: rotate(0deg);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -8px;
+    z-index: 1;
+    width: calc(100% + 16px);
+    height: calc(100% + 4px);
+    border: 2px solid $color-primary--denim;
+    border-radius: $border-radius;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .slds-accordion__summary-content {
+      text-decoration: underline;
+    }
+  }
+}
+
+.slds-accordion__content {
+  padding: 0 .75rem .75rem;
+}
+
+.slds-accordion__section.slds-is-open {
+  .slds-accordion__summary {
+    margin-bottom: .5rem;
+  }
+
+  .slds-accordion__summary-action {
+    border-bottom-width: 0;
+  }
+
+  .slds-accordion__summary-action-icon {
+    transform: rotate(180deg);
+  }
+
+  > .slds-accordion__content {
+    border-bottom: 1px solid $color-primary--sky;
+  }
+}
+
+
+// ------------------------------------------------------------
+/* Tiles */
+// ------------------------------------------------------------
+
+.slds-tile {
+  position: relative;
+  margin-bottom: 1.25em;
+  padding: .5em 1em .5em .5em;
+  color: $color-neutral--woodsmoke;
+  font-size: $type-size--5;
+  border: 1px solid $color-neutral--woodsmoke;
+  border-radius: 4px;
+  background: $color-neutral--gallery;
+  box-shadow: none;
+
+  // Double border focus state
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: -1;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 2px solid $color-neutral--woodsmoke;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+// Assume content within tiles is description lists
+.slds-list_horizontal {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(10px, 1fr);
+  grid-gap: .25rem;
+
+  &:not(:first-child) {
+    margin-top: .25rem;
+  }
+
+  .slds-item_label {
+    width: 100%;
+    font-weight: $type-weight--semibold;
+  }
+
+  .slds-item_detail {
+    width: 100%;
+  }
+}
+
+
+// ------------------------------------------------------------
+/* Multi-select picklists */
+/* jQueryUI Component - Eventually replace with SLDS/JS */
+// ------------------------------------------------------------
+
+.multiSelectPicklistRow {
+  display: grid;
+  grid-template-columns: 1fr 2rem 1fr;
+
+  // Select areas
+  select {
+    width: 100% !important;
+    border: 1px solid $color-neutral--nobel;
+    border-radius: 4px;
+
+    optgroup {
+      padding: .5rem .75rem;
+      color: $color-neutral--emperor;
+      font-size: $type-size--5;
+    }
+
+    option {
+      width: 100% !important;
+      padding: .25rem .75rem;
+    }
+  }
+
+  // Add/Remove control cell
+  .multiSelectPicklistCell {
+    br {
+      display: none;
+    }
+
+    a {
+      display: flex;
+      width: 2rem;
+      height: 2rem;
+
+      img {
+        width: 1rem;
+        height: 1rem;
+        margin: auto;
+      }
+
+      + a {
+        margin-top: .5rem;
+      }
+    }
+  }
+}
+
+
+// ------------------------------------------------------------
+/* Cards */
+// ------------------------------------------------------------
+
+.slds-card {
+  padding: .8rem 1rem .9rem;
+  border: 2px solid #004976;
+  border-radius: 4px;
+  background-color: #fff;
+
+  .slds-media__figure {
+    flex: 0 0 7.5rem;
+    overflow: hidden;
+    margin-right: 1rem;
+    border-radius: 50%;
+  }
+
+  .slds-card__header-title {
+    font-size: $type-size--3;
+    font-weight: 700;
+  }
+
+  .slds-list_horizontal {
+    grid-gap: 0 .25rem;
+  }
+
+  .slds-card__footer {
+    margin-top: 0;
+    padding: 0;
+    border-top: 0;
+    font-size: $type-size--4;
+  }
+
+  // Using expandable sections as the more info area
+  .slds-section__title-action {
+    padding-left: 9.5rem;
+    background-color: transparent;
+    border: 0;
+    color: $color-primary--denim;
+    font-size: $type-size--5;
+    font-weight: $type-weight--semibold;
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    .slds-section__title-action-icon {
+      margin-left: .5rem;
+    }
+  }
+
+  .slds-section__content {
+    padding-left: 9.5rem; // Align with non-expanded content
+    text-align: left;
+  }
+}
+
+
+
+// ------------------------------------------------------------
+/* Footer */
+// ------------------------------------------------------------
+
+.footer {
+  display: block;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  background-color: #ededed;
+  color: #555;
+  font-size: $type-size--5;
+
+  .footer__links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-left: -.5rem;
+
+    a {
+      display: block;
+      padding: .5rem;
+      color: currentColor;
+      transition: color .15s;
+
+      &:hover,
+      &:focus {
+        color: #222;
+      }
+    }
+  }
+
+  .footer__social {
+    margin: 1.5rem 0 2rem;
+
+    li {
+      display: inline-block;
+
+      + li {
+        margin-left: .5rem;
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid #939393;
+        border-radius: 50%;
+        background-color: transparent;
+        color: #555;
+        outline: none;
+        transition: background-color 0.15s, color 0.15s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          width: calc(100% + 10px);
+          height: calc(100% + 10px);
+          border: 2px solid #555;
+          border-radius: 50%;
+          opacity: 0;
+          transition: opacity 0.15s;
+        }
+
+        svg {
+          max-height: 65%;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: #555;
+          color: #ededed;
+
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
