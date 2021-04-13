@@ -1,0 +1,87 @@
+@use 'core' as *;
+
+// ------------------------------------------------------------
+/* Footer */
+// ------------------------------------------------------------
+
+.footer {
+  display: block;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  background-color: #ededed;
+  color: #555;
+  font-size: $type-size--5;
+
+  .footer__links {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-left: -.5rem;
+
+    a {
+      display: block;
+      padding: .5rem;
+      color: currentColor;
+      transition: color .15s;
+
+      &:hover,
+      &:focus {
+        color: #222;
+      }
+    }
+  }
+
+  .footer__social {
+    margin: 1.5rem 0 2rem;
+
+    li {
+      display: inline-block;
+
+      + li {
+        margin-left: .5rem;
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid #939393;
+        border-radius: 50%;
+        background-color: transparent;
+        color: #555;
+        outline: none;
+        transition: background-color 0.15s, color 0.15s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          width: calc(100% + 10px);
+          height: calc(100% + 10px);
+          border: 2px solid #555;
+          border-radius: 50%;
+          opacity: 0;
+          transition: opacity 0.15s;
+        }
+
+        svg {
+          max-height: 65%;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: #555;
+          color: #ededed;
+
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

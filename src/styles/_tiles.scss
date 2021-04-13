@@ -1,0 +1,41 @@
+@use 'core' as *;
+
+
+// ------------------------------------------------------------
+/* Tiles */
+// ------------------------------------------------------------
+
+.slds-tile {
+  position: relative;
+  margin-bottom: 1.25em;
+  padding: .5em 1em .5em .5em;
+  color: $color-neutral--woodsmoke;
+  font-size: $type-size--5;
+  border: 1px solid $color-neutral--woodsmoke;
+  border-radius: 4px;
+  background: $color-neutral--gallery;
+  box-shadow: none;
+
+  // Double border focus state
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: -1;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 2px solid $color-neutral--woodsmoke;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity .15s;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}

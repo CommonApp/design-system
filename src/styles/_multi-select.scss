@@ -1,0 +1,53 @@
+@use 'core' as *;
+
+
+// ------------------------------------------------------------
+/* Multi-select picklists */
+/* jQueryUI Component - Eventually replace with SLDS/JS */
+// ------------------------------------------------------------
+
+.multiSelectPicklistRow {
+  display: grid;
+  grid-template-columns: 1fr 2rem 1fr;
+
+  // Select areas
+  select {
+    width: 100% !important;
+    border: 1px solid $color-neutral--nobel;
+    border-radius: 4px;
+
+    optgroup {
+      padding: .5rem .75rem;
+      color: $color-neutral--emperor;
+      font-size: $type-size--5;
+    }
+
+    option {
+      width: 100% !important;
+      padding: .25rem .75rem;
+    }
+  }
+
+  // Add/Remove control cell
+  .multiSelectPicklistCell {
+    br {
+      display: none;
+    }
+
+    a {
+      display: flex;
+      width: 2rem;
+      height: 2rem;
+
+      img {
+        width: 1rem;
+        height: 1rem;
+        margin: auto;
+      }
+
+      + a {
+        margin-top: .5rem;
+      }
+    }
+  }
+}

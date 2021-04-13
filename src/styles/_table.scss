@@ -1,0 +1,52 @@
+@use 'core' as *;
+
+.slds-table {
+  width: 100%;
+  margin-bottom: 3.75rem;
+  font-size: $type-size--5;
+  border: 1px solid $color-neutral--alto;
+  border-collapse: collapse;
+
+  tr {
+    height: auto;
+  }
+
+  th,
+  td {
+    border-top: 0;
+    border-right: 1px solid $color-neutral--alto;
+    border-bottom: 1px solid $color-neutral--alto;
+    border-left: 0;
+    box-shadow: none !important;
+    white-space: initial;
+
+    &.no-wrap {
+      white-space: nowrap;
+    }
+  }
+
+  th {
+    font-weight: $type-weight--semibold;
+  }
+
+  thead {
+    th {
+      padding: .5rem !important;
+    }
+  }
+
+  tbody {
+    th,
+    td {
+      padding: .5rem !important;
+    }
+
+    // Stripe alternating rows
+    tr:nth-child(even) {
+      th,
+      td {
+        background-color: $color-neutral--concrete;
+      }
+    }
+  }
+}

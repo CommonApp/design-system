@@ -1,0 +1,114 @@
+@use 'core' as *;
+
+// ------------------------------------------------------------
+/* Buttons */
+// ------------------------------------------------------------
+
+.slds-button {
+  display: block;
+  // padding: .75em 1.25em .85em; Neutrif padding
+  padding: .85em 1.25em .85em; // Roboto padding
+  border: 2px solid transparent;
+  border-radius: 32px;
+  background: transparent;
+  outline: 0;
+  font-family: $type-family--neutrif;
+  font-size: $type-size--5;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color .15s,
+    border-color .15s,
+    color .15s,
+    transform .35s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 40px;
+    box-shadow:
+      0 1px 1px rgba(#000, .11),
+      0 2px 2px rgba(#000, .11),
+      0 4px 4px rgba(#000, .11),
+      0 6px 8px rgba(#000, .11),
+      0 8px 16px rgba(#000, .11);
+    opacity: 0;
+    transition: opacity .35s;
+    transform: translate3d(0, 0, 0);
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transform: translate3d(0, -3px, 0);
+
+    &::before {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transform: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+    text-decoration: underline;
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition:
+      background-color .15s,
+      border-color .15s,
+      color .15s;
+  }
+
+  &.slds-button_brand {
+    border-color: $color-primary--denim;
+    background-color: $color-primary--denim;
+    color: #fff;
+  }
+
+  &.slds-button_outline-brand {
+    border-color: $color-primary--denim;
+    background-color: #fff;
+    color: $color-primary--denim;
+  }
+
+  &.slds-button_neutral {
+    border-color: $color-neutral--gray;
+    background-color: #fff;
+    color: $color-neutral--boulder;
+  }
+
+  &.slds-button_icon {
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border-width: 1px;
+    border-radius: 50%;
+    color: $color-neutral--woodsmoke;
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+      margin: auto;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $color-neutral--boulder;
+    }
+  }
+}

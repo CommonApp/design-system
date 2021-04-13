@@ -1,0 +1,60 @@
+/* Common App Lightning Design System customization */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+
+// CA Variables
+// Primary brand colors
+$color-primary--conifer: #b6d961 !default;
+$color-primary--downy:   #5acccc !default;
+$color-primary--sky:     #40c5eb !default;
+$color-primary--denim:   #0b6dbd !default;
+$color-primary--regal:   #004976 !default;
+
+// Secondary brand colors
+$color-secondary--amethyst: #916cc6 !default;
+
+// Neutral palette
+$color-neutral--woodsmoke: #222 !default;
+$color-neutral--emperor:   #555 !default;
+$color-neutral--boulder:   #757575 !default;
+$color-neutral--gray:      #939393 !default;
+$color-neutral--nobel:     #b7b7b7 !default;
+$color-neutral--alto:      #d3d3d3 !default;
+$color-neutral--mercury:   #e0e0e0 !default;
+$color-neutral--gallery:   #ededed !default;
+$color-neutral--concrete:  #f6f6f6 !default;
+
+// Form control brand color
+$color-forms--goblin: #40a656 !default;
+
+// System status colors
+$color-status--error:   #e00029 !default;
+$color-status--success: #107e3f !default;
+
+// ---------------------------------------------------------------------------
+// Borders
+// ---------------------------------------------------------------------------
+$border-radius: 4px !default; // ? `px` to prevent rounding scaling
+
+
+// ---------------------------------------------------------------------------
+// Typography
+// ---------------------------------------------------------------------------
+// Font stacks
+$type-family--system: 'Roboto', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif !default;
+$type-family--neutrif: 'Neutrif Studio', #{$type-family--system} !default;
+
+// Font sizes
+$type-size--default: 1rem !default; // 16px
+$type-size--1:       2rem !default; // 32px
+$type-size--2:       1.375rem !default; // 22px
+$type-size--3:       1.125rem !default; // 18px
+$type-size--4:       1rem !default; // 16px
+$type-size--5:       .875rem !default; // 14px
+$type-size--6:       .75rem !default; // 12px
+$type-size--7:       .625rem !default; // 10px
+
+// Font weights
+$type-weight--regular:  400 !default;
+$type-weight--semibold: 500 !default;
+$type-weight--bold:     700 !default;
